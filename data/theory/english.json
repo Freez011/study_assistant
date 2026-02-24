@@ -1,0 +1,44 @@
+{
+  "topics": [
+    {
+      "title": "Present Simple",
+      "content": "Present Simple (настоящее простое время) используется для выражения обычных, регулярных действий или фактов. Образуется: I/You/We/They + V1, He/She/It + V1 + -s/-es. Вопросительная форма: Do/Does + подлежащее + V1? Отрицание: do/does + not + V1. Слова-маркеры: always, usually, often, sometimes, never, every day/week. Пример: I work, He works, Do you work? She does not work.",
+      "keywords": ["present simple", "грамматика", "время"]
+    },
+    {
+      "title": "Past Simple",
+      "content": "Past Simple (прошедшее простое) выражает действие, произошедшее в прошлом. Для правильных глаголов добавляется окончание -ed, неправильные глаголы имеют вторую форму (см. таблицу неправильных глаголов). Вопросительная форма: Did + подлежащее + V1? Отрицание: did not + V1. Маркеры: yesterday, last week, ago, in 1990. Пример: I worked, I saw, Did you see? He didn't go.",
+      "keywords": ["past simple", "прошедшее", "неправильные глаголы"]
+    },
+    {
+      "title": "Future Simple",
+      "content": "Future Simple (будущее простое) выражает спонтанные решения, обещания, предсказания. Образуется: will + V1. Вопросительная форма: Will + подлежащее + V1? Отрицание: will not (won't) + V1. Маркеры: tomorrow, next week, soon. Также для выражения запланированных действий используется конструкция to be going to + V1. Пример: I will help you. It's going to rain.",
+      "keywords": ["future simple", "will", "going to"]
+    },
+    {
+      "title": "Present Continuous",
+      "content": "Present Continuous (настоящее длительное) описывает действие, происходящее в момент речи, или временную ситуацию. Образуется: am/is/are + V-ing. Вопрос: Am/Is/Are + подлежащее + V-ing? Отрицание: am/is/are + not + V-ing. Маркеры: now, at the moment, today, this week. Пример: I am reading now. He is studying this week.",
+      "keywords": ["present continuous", "длительное"]
+    },
+    {
+      "title": "Модальные глаголы",
+      "content": "Модальные глаголы (can, could, may, might, must, shall, should, will, would, ought to) выражают возможность, необходимость, разрешение, совет. Особенности: после них не используется to, они не изменяются по лицам. Примеры: I can swim. You must go. He should study. May I come in?",
+      "keywords": ["модальные", "can", "must", "should"]
+    },
+    {
+      "title": "Условные предложения",
+      "content": "Условные предложения (if- clauses) бывают нескольких типов: 0 тип (реальные факты: If + present simple, present simple), 1 тип (реальные условия в будущем: If + present simple, will + V1), 2 тип (маловероятные или нереальные: If + past simple, would + V1), 3 тип (нереальные в прошлом: If + past perfect, would have + V3). Смешанные типы. Примеры: If you heat ice, it melts. If it rains, I'll stay home. If I had money, I'd buy a car. If I had known, I would have told you.",
+      "keywords": ["conditional", "if", "условные"]
+    },
+    {
+      "title": "Страдательный залог (Passive Voice)",
+      "content": "Страдательный залог используется, когда действие важнее исполнителя. Образуется: to be + past participle (V3). Время определяется по форме глагола to be. Примеры: The letter is written (Present Simple), The letter was written (Past Simple), The letter will be written (Future Simple), The letter is being written (Present Continuous).",
+      "keywords": ["passive", "страдательный залог"]
+    },
+    {
+      "title": "Косвенная речь",
+      "content": "При переводе прямой речи в косвенную изменяются времена (сдвиг назад: Present Simple → Past Simple, Past Simple → Past Perfect, Future Simple → would + V1 и т.д.), местоимения и указатели времени (now → then, today → that day, tomorrow → the next day). Вопросы в косвенной речи имеют прямой порядок слов. Пример: He said, 'I am tired' → He said that he was tired.",
+      "keywords": ["reported speech", "косвенная речь"]
+    }
+  ]
+}

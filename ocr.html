@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мои конспекты - Study Assistant</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="theme-toggle">
+        <button id="theme-switch"><i class="fas fa-moon"></i></button>
+    </div>
+
+    <div class="dashboard">
+        <div class="dashboard-header">
+            <a href="dashboard.html" class="back-link"><i class="fas fa-arrow-left"></i> Назад</a>
+            <h1>Мои конспекты</h1>
+            <div class="user-info">
+                <span id="username"></span>
+                <button id="logout-btn"><i class="fas fa-sign-out-alt"></i> Выйти</button>
+            </div>
+        </div>
+
+        <!-- Область загрузки -->
+        <div class="upload-area" id="upload-area">
+            <i class="fas fa-cloud-upload-alt"></i>
+            <p>Нажмите или перетащите изображения конспектов</p>
+            <input type="file" id="file-input" accept="image/*" multiple hidden>
+        </div>
+
+        <!-- Галерея конспектов -->
+        <div id="gallery" class="gallery">
+            <p>Загрузите первый конспект, чтобы он появился здесь.</p>
+        </div>
+    </div>
+
+    <!-- Модальное окно для просмотра изображения -->
+    <div id="modal" class="modal" style="display:none;">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modal-image">
+        <div id="modal-caption"></div>
+    </div>
+
+    <script src="js/theme.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/notes.js"></script>
+</body>
+</html>

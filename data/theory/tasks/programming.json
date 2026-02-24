@@ -1,0 +1,54 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "question": "Напишите на C++ программу, которая запрашивает у пользователя два числа и выводит их сумму.",
+      "answer": "#include <iostream>\nusing namespace std;\nint main() { int a,b; cin>>a>>b; cout<<a+b; return 0; }"
+    },
+    {
+      "id": 2,
+      "question": "Что выведет следующий код на Python: print(2 ** 3)?",
+      "answer": "8"
+    },
+    {
+      "id": 3,
+      "question": "Объясните разницу между списком и кортежем в Python.",
+      "answer": "Список изменяемый, кортеж неизменяемый."
+    },
+    {
+      "id": 4,
+      "question": "Напишите на C# функцию, которая принимает строку и возвращает её длину.",
+      "answer": "int GetLength(string s) { return s.Length; }"
+    },
+    {
+      "id": 5,
+      "question": "Что такое виртуальная функция в C++?",
+      "answer": "Виртуальная функция позволяет переопределить её в производных классах и обеспечивает полиморфизм во время выполнения."
+    },
+    {
+      "id": 6,
+      "question": "Реализуйте на Python функцию, которая проверяет, является ли число простым.",
+      "answer": "def is_prime(n):\n    if n<2: return False\n    for i in range(2, int(n**0.5)+1):\n        if n%i==0: return False\n    return True"
+    },
+    {
+      "id": 7,
+      "question": "Как объявить двумерный массив в C++?",
+      "answer": "int arr[3][4]; или vector<vector<int>> arr(3, vector<int>(4));"
+    },
+    {
+      "id": 8,
+      "question": "Что такое LINQ в C#?",
+      "answer": "Language Integrated Query — компонент .NET, позволяющий выполнять запросы к коллекциям, базам данных и XML с использованием синтаксиса, похожего на SQL."
+    },
+    {
+      "id": 9,
+      "question": "Напишите программу на Python, которая считывает файл и выводит количество строк в нём.",
+      "answer": "with open('file.txt') as f: print(len(f.readlines()))"
+    },
+    {
+      "id": 10,
+      "question": "Какая сложность алгоритма быстрой сортировки в среднем?",
+      "answer": "O(n log n)"
+    }
+  ]
+}
