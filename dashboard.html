@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Assistant - Главная</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard">
+        <div class="dashboard-header">
+            <h1>Study Assistant</h1>
+            <div class="user-info">
+                <a href="profile.html" class="profile-link" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit;">
+                    <div style="width: 40px; height: 40px; border-radius: 50%; overflow: hidden; background: var(--primary); display: flex; align-items: center; justify-content: center;">
+                        <img id="profile-avatar" src="" alt="Avatar" style="width: 100%; height: 100%; object-fit: cover; display: none;">
+                        <i class="fas fa-user-circle" id="default-avatar" style="font-size: 40px; color: white;"></i>
+                    </div>
+                    <span id="username"></span>
+                </a>
+                <button id="logout-btn"><i class="fas fa-sign-out-alt"></i> Выйти</button>
+            </div>
+        </div>
+
+        <div class="sections-grid">
+            <a href="search.html" class="section-card">
+                <div class="section-icon"><i class="fas fa-search"></i></div>
+                <h3>Поиск по теории</h3>
+                <p>Найти любую тему по всем предметам</p>
+            </a>
+            <a href="discrete-math.html" class="section-card">
+                <div class="section-icon"><i class="fas fa-infinity"></i></div>
+                <h3>Дискретная математика</h3>
+                <p>Множества, операции, задачи</p>
+            </a>
+            <a href="calculus.html" class="section-card">
+                <div class="section-icon"><i class="fas fa-chart-line"></i></div>
+                <h3>Математический анализ</h3>
+                <p>Производные, интегралы</p>
+            </a>
+            <a href="programming.html" class="section-card">
+                <div class="section-icon"><i class="fas fa-code"></i></div>
+                <h3>Программирование на Python</h3>
+                <p>Теория, задачи, выполнение кода</p>
+            </a>
+            <a href="english.html" class="section-card">
+                <div class="section-icon"><i class="fas fa-language"></i></div>
+                <h3>Английский язык</h3>
+                <p>Грамматика, слова</p>
+            </a>
+            <a href="history.html" class="section-card">
+                <div class="section-icon"><i class="fas fa-landmark"></i></div>
+                <h3>История России</h3>
+                <p>Даты, события</p>
+            </a>
+            <a href="ocr.html" class="section-card">
+                <div class="section-icon"><i class="fas fa-images"></i></div>
+                <h3>Мои конспекты</h3>
+                <p>Сохраняйте и просматривайте свои решения</p>
+            </a>
+            <a href="favorites.html" class="section-card">
+                <div class="section-icon"><i class="fas fa-star"></i></div>
+                <h3>Избранное</h3>
+                <p>Сохранённые темы и заметки</p>
+            </a>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <span>© 2026 Study Assistant</span>
+            <span>📞 +7 (933) 234-50-04</span>
+            <a href="https://t.me/freezqwx" target="_blank" class="telegram-link">
+                <i class="fab fa-telegram-plane"></i> @freezqwx
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        // Проверка авторизации
+        const currentUser = localStorage.getItem('currentUser');
+        if (!currentUser) {
+            window.location.href = 'index.html';
+        }
+
+        // Загрузка данных профиля
+        const profileData = JSON.parse(localStorage.getItem(`profile_${currentUser}`)) || {};
+        const usernameSpan = document.getElementById('username');
+        if (profileData.firstName || profileData.lastName) {
+            usernameSpan.textContent = `${profileData.firstName || ''} ${profileData.lastName || ''}`.trim();
+        } else {
+            usernameSpan.textContent = currentUser;
+        }
+
+        const avatarImg = document.getElementById('profile-avatar');
+        const defaultIcon = document.getElementById('default-avatar');
+        if (profileData.avatar) {
+            avatarImg.src = profileData.avatar;
+            avatarImg.style.display = 'block';
+            defaultIcon.style.display = 'none';
+        } else {
+            avatarImg.style.display = 'none';
+            defaultIcon.style.display = 'block';
+        }
+
+        document.getElementById('logout-btn').addEventListener('click', () => {
+            localStorage.removeItem('currentUser');
+            window.location.href = 'index.html';
+        });
+    </script>
+    <script src="js/apply-theme.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

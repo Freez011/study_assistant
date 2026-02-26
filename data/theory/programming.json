@@ -1,0 +1,34 @@
+{
+  "topics": [
+    {
+      "title": "Основы Python: переменные и типы данных",
+      "content": "Python — интерпретируемый язык с динамической типизацией. Основные типы: int, float, str, bool, list, tuple, dict, set. Переменные объявляются присваиванием: x = 5. Тип переменной определяется автоматически.",
+      "keywords": ["python", "переменные", "типы"]
+    },
+    {
+      "title": "Условные операторы и циклы",
+      "content": "if, elif, else; for (итерация по последовательностям), while. Пример: if x > 0: print('positive'). Цикл for: for i in range(5): print(i).",
+      "keywords": ["if", "for", "while"]
+    },
+    {
+      "title": "Функции в Python",
+      "content": "Определение функции: def function_name(params): return value. Аргументы по умолчанию, *args, **kwargs. Лямбда-функции: lambda x: x**2.",
+      "keywords": ["def", "return", "lambda"]
+    },
+    {
+      "title": "Списки и операции с ними",
+      "content": "Список — изменяемая упорядоченная коллекция. Методы: append, extend, insert, remove, pop, index, sort, reverse. Срезы: list[start:stop:step].",
+      "keywords": ["list", "append", "срезы"]
+    },
+    {
+      "title": "Словари",
+      "content": "Словарь — неупорядоченная коллекция пар ключ-значение. Создание: d = {'key': 'value'}. Доступ: d['key']. Методы: keys, values, items, get, update.",
+      "keywords": ["dict", "словарь", "ключи"]
+    },
+    {
+      "title": "Работа с файлами",
+      "content": "Открытие файла: open('file.txt', 'r'). Режимы: 'r' (чтение), 'w' (запись), 'a' (добавление). Чтение: read(), readlines(). Запись: write(). Желательно использовать with для автоматического закрытия.",
+      "keywords": ["file", "open", "with"]
+    }
+  ]
+}

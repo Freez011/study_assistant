@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поиск - Study Assistant</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard">
+        <div class="dashboard-header">
+            <a href="dashboard.html" class="back-link"><i class="fas fa-arrow-left"></i> Назад</a>
+            <h1>Поиск по теории</h1>
+            <div class="user-info">
+                <a href="profile.html" class="profile-link" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit;">
+                    <div style="width: 40px; height: 40px; border-radius: 50%; overflow: hidden; background: var(--primary); display: flex; align-items: center; justify-content: center;">
+                        <img id="profile-avatar" src="" alt="Avatar" style="width: 100%; height: 100%; object-fit: cover; display: none;">
+                        <i class="fas fa-user-circle" id="default-avatar" style="font-size: 40px; color: white;"></i>
+                    </div>
+                    <span id="username"></span>
+                </a>
+                <button id="logout-btn"><i class="fas fa-sign-out-alt"></i> Выйти</button>
+            </div>
+        </div>
+
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Введите тему...">
+                <button id="search-btn"><i class="fas fa-search"></i> Найти</button>
+            </div>
+            <div id="search-results" class="search-results"></div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <span>© 2026 Study Assistant</span>
+            <span>📞 +7 (933) 234-50-04</span>
+            <a href="https://t.me/freezqwx" target="_blank" class="telegram-link">
+                <i class="fab fa-telegram-plane"></i> @freezqwx
+            </a>
+        </div>
+    </footer>
+
+    <script src="js/apply-theme.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/search.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Загрузка данных профиля
+            const currentUser = localStorage.getItem('currentUser');
+            if (currentUser) {
+                const profileData = JSON.parse(localStorage.getItem(`profile_${currentUser}`)) || {};
+                const usernameSpan = document.getElementById('username');
+                if (profileData.firstName || profileData.lastName) {
+                    usernameSpan.textContent = `${profileData.firstName || ''} ${profileData.lastName || ''}`.trim();
+                } else {
+                    usernameSpan.textContent = currentUser;
+                }
+
+                const avatarImg = document.getElementById('profile-avatar');
+                const defaultIcon = document.getElementById('default-avatar');
+                if (profileData.avatar) {
+                    avatarImg.src = profileData.avatar;
+                    avatarImg.style.display = 'block';
+                    defaultIcon.style.display = 'none';
+                } else {
+                    avatarImg.style.display = 'none';
+                    defaultIcon.style.display = 'block';
+                }
+            }
+
+            // Обработка выхода
+            document.getElementById('logout-btn').addEventListener('click', () => {
+                localStorage.removeItem('currentUser');
+                window.location.href = 'index.html';
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль - Study Assistant</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard">
+        <div class="dashboard-header">
+            <a href="dashboard.html" class="back-link"><i class="fas fa-arrow-left"></i> Назад</a>
+            <h1>Мой профиль</h1>
+            <div></div>
+        </div>
+
+        <!-- Карточка профиля (новый дизайн) -->
+        <div class="profile-card">
+            <!-- Блок аватара с возможностью загрузки -->
+            <div class="avatar-wrapper">
+                <div class="avatar-container">
+                    <img id="profile-avatar-preview" src="" alt="Аватар" class="profile-avatar">
+                    <div class="avatar-overlay">
+                        <i class="fas fa-camera"></i>
+                        <span>Изменить фото</span>
+                    </div>
+                    <input type="file" id="avatar-upload" accept="image/*" hidden>
+                </div>
+            </div>
+
+            <!-- Форма данных профиля -->
+            <div class="profile-form">
+                <!-- Имя и фамилия в одной строке -->
+                <div class="form-row">
+                    <div class="input-group">
+                        <label><i class="fas fa-user"></i> Имя</label>
+                        <input type="text" id="first-name" class="profile-input" placeholder="Введите ваше имя">
+                    </div>
+                    <div class="input-group">
+                        <label><i class="fas fa-user-tag"></i> Фамилия</label>
+                        <input type="text" id="last-name" class="profile-input" placeholder="Введите фамилию">
+                    </div>
+                </div>
+
+                <!-- Информация о себе -->
+                <div class="input-group">
+                    <label><i class="fas fa-info-circle"></i> О себе</label>
+                    <textarea id="bio" rows="4" class="profile-input" placeholder="Расскажите немного о себе..."></textarea>
+                </div>
+
+                <!-- Блок настроек (тема) -->
+                <div class="settings-card">
+                    <h3><i class="fas fa-cog"></i> Настройки</h3>
+                    <div class="theme-selector-wrapper">
+                        <label for="theme-selector-profile">Тема оформления:</label>
+                        <select id="theme-selector-profile" class="theme-select-profile">
+                            <option value="light">🌞 Светлая</option>
+                            <option value="dark-theme">🌚 Тёмная</option>
+                            <option value="forest-theme">🌲 Лесная</option>
+                            <option value="ocean-theme">🌊 Океан</option>
+                            <option value="sunset-theme">🌅 Закат</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Кнопки действий -->
+                <div class="profile-actions">
+                    <button id="save-profile" class="btn-primary btn-ripple">
+                        <i class="fas fa-save"></i> Сохранить
+                    </button>
+                    <button id="cancel-profile" class="btn-secondary btn-ripple">
+                        <i class="fas fa-times"></i> Отмена
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Футер (уже есть в style.css) -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <span>© 2026 Study Assistant</span>
+            <span>📞 +7 (933) 234-50-04</span>
+            <a href="https://t.me/freezqwx" target="_blank" class="telegram-link">
+                <i class="fab fa-telegram-plane"></i> @freezqwx
+            </a>
+        </div>
+    </footer>
+
+    <!-- Скрипты -->
+    <script src="js/auth.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+</html>

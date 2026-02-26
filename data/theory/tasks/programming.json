@@ -1,0 +1,44 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "question": "Напишите код на Python, который выводит 'Hello, World!'.",
+      "answer": "print('Hello, World!')"
+    },
+    {
+      "id": 2,
+      "question": "Какой тип данных у переменной x = 3.14?",
+      "answer": "float"
+    },
+    {
+      "id": 3,
+      "question": "Создайте список чисел от 1 до 5 и выведите его.",
+      "answer": "print([1,2,3,4,5])"
+    },
+    {
+      "id": 4,
+      "question": "Напишите функцию, которая принимает два числа и возвращает их сумму.",
+      "answer": "def add(a,b): return a+b"
+    },
+    {
+      "id": 5,
+      "question": "Как получить последний элемент списка lst?",
+      "answer": "lst[-1]"
+    },
+    {
+      "id": 6,
+      "question": "Напишите цикл for, который выводит числа от 0 до 4.",
+      "answer": "for i in range(5): print(i)"
+    },
+    {
+      "id": 7,
+      "question": "Что выведет код: print(2 ** 3)?",
+      "answer": "8"
+    },
+    {
+      "id": 8,
+      "question": "Как открыть файл 'data.txt' для чтения?",
+      "answer": "with open('data.txt', 'r') as f:"
+    }
+  ]
+}
