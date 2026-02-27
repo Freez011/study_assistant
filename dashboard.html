@@ -67,6 +67,39 @@
         </div>
     </div>
 
+    <!-- Виджет обратной связи -->
+    <div class="feedback-widget">
+        <!-- Кнопка-иконка для открытия -->
+        <div class="feedback-toggle" id="feedbackToggle">
+            <i class="fas fa-comment"></i>
+        </div>
+        <!-- Форма обратной связи (скрыта по умолчанию) -->
+        <div class="feedback-form" id="feedbackFormContainer">
+            <div class="feedback-form-header">
+                <h3>Обратная связь</h3>
+                <button class="feedback-close" id="feedbackClose">&times;</button>
+            </div>
+            <form id="feedbackForm">
+                <div class="form-group">
+                    <label for="name"><i class="fas fa-user"></i> Имя</label>
+                    <input type="text" id="name" class="feedback-input" placeholder="Иван Иванов" required>
+                </div>
+                <div class="form-group">
+                    <label for="email"><i class="fas fa-envelope"></i> Email</label>
+                    <input type="email" id="email" class="feedback-input" placeholder="ivan@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="message"><i class="fas fa-comment"></i> Сообщение</label>
+                    <textarea id="message" class="feedback-input" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn-primary btn-ripple" id="submitBtn"><i class="fab fa-telegram-plane"></i> Отправить</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Уведомление -->
+    <div id="notification" class="notification"></div>
+
     <footer class="site-footer">
         <div class="footer-content">
             <span>© 2026 Study Assistant</span>
@@ -78,13 +111,12 @@
     </footer>
 
     <script>
-        // Проверка авторизации
+        // Проверка авторизации и загрузка профиля
         const currentUser = localStorage.getItem('currentUser');
         if (!currentUser) {
             window.location.href = 'index.html';
         }
 
-        // Загрузка данных профиля
         const profileData = JSON.parse(localStorage.getItem(`profile_${currentUser}`)) || {};
         const usernameSpan = document.getElementById('username');
         if (profileData.firstName || profileData.lastName) {
@@ -111,5 +143,77 @@
     </script>
     <script src="js/apply-theme.js"></script>
     <script src="js/auth.js"></script>
+
+    <!-- Скрипт для виджета обратной связи -->
+    <script>
+        const TELEGRAM_LINK = 'https://t.me/freezqwx';
+
+        function showNotification(message, type = 'success') {
+            const notification = document.getElementById('notification');
+            notification.textContent = message;
+            notification.className = `notification ${type} show`;
+            setTimeout(() => {
+                notification.className = 'notification';
+            }, 4000);
+        }
+
+        function sendToTelegram(name, email, message) {
+            const prefix = '📩 НОВОЕ СООБЩЕНИЕ С САЙТА STUDY ASSISTANT';
+            const formattedMessage = `${prefix}%0A%0A👤 Имя: ${encodeURIComponent(name)}%0A📧 Email: ${encodeURIComponent(email)}%0A💬 Сообщение: ${encodeURIComponent(message)}%0A%0A⏰ Время: ${encodeURIComponent(new Date().toLocaleString('ru-RU'))}%0A🔗 Сайт: Study Assistant`;
+            const telegramUrl = `${TELEGRAM_LINK}?text=${formattedMessage}`;
+            window.open(telegramUrl, '_blank');
+            return true;
+        }
+
+        // Управление виджетом
+        const toggleBtn = document.getElementById('feedbackToggle');
+        const formContainer = document.getElementById('feedbackFormContainer');
+        const closeBtn = document.getElementById('feedbackClose');
+
+        toggleBtn.addEventListener('click', () => {
+            formContainer.classList.add('active');
+            toggleBtn.style.display = 'none';
+        });
+
+        closeBtn.addEventListener('click', () => {
+            formContainer.classList.remove('active');
+            toggleBtn.style.display = 'flex';
+        });
+
+        // Обработка отправки формы
+        document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            if (!name || !email || !message) {
+                showNotification('❌ Заполните все поля формы', 'error');
+                return;
+            }
+
+            const submitBtn = document.getElementById('submitBtn');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Открывается Telegram...';
+            submitBtn.disabled = true;
+
+            try {
+                sendToTelegram(name, email, message);
+                showNotification('✅ Открывается Telegram! Отправьте сообщение', 'success');
+                setTimeout(() => {
+                    document.getElementById('feedbackForm').reset();
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                    // После отправки можно автоматически свернуть форму (опционально)
+                    // formContainer.classList.remove('active');
+                    // toggleBtn.style.display = 'flex';
+                }, 3000);
+            } catch (error) {
+                showNotification('❌ Ошибка отправки', 'error');
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+    </script>
 </body>
 </html>

@@ -27,7 +27,7 @@
         </div>
 
         <div class="topic-container">
-            <!-- Теория -->
+            <!-- Теория (сворачиваемые темы) -->
             <div class="topic-section">
                 <h3><i class="fas fa-book-open"></i> Теория</h3>
                 <div id="theory-list"></div>
@@ -103,47 +103,71 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Загрузка данных профиля
             const currentUser = localStorage.getItem('currentUser');
-            if (currentUser) {
-                const profileData = JSON.parse(localStorage.getItem(`profile_${currentUser}`)) || {};
-                const usernameSpan = document.getElementById('username');
-                if (profileData.firstName || profileData.lastName) {
-                    usernameSpan.textContent = `${profileData.firstName || ''} ${profileData.lastName || ''}`.trim();
-                } else {
-                    usernameSpan.textContent = currentUser;
-                }
-
-                const avatarImg = document.getElementById('profile-avatar');
-                const defaultIcon = document.getElementById('default-avatar');
-                if (profileData.avatar) {
-                    avatarImg.src = profileData.avatar;
-                    avatarImg.style.display = 'block';
-                    defaultIcon.style.display = 'none';
-                } else {
-                    avatarImg.style.display = 'none';
-                    defaultIcon.style.display = 'block';
-                }
+            if (!currentUser) {
+                window.location.href = 'index.html';
+                return;
+            }
+            const profileData = JSON.parse(localStorage.getItem(`profile_${currentUser}`)) || {};
+            const usernameSpan = document.getElementById('username');
+            if (profileData.firstName || profileData.lastName) {
+                usernameSpan.textContent = `${profileData.firstName || ''} ${profileData.lastName || ''}`.trim();
+            } else {
+                usernameSpan.textContent = currentUser;
             }
 
-            // Загрузка теории Python
+            const avatarImg = document.getElementById('profile-avatar');
+            const defaultIcon = document.getElementById('default-avatar');
+            if (profileData.avatar) {
+                avatarImg.src = profileData.avatar;
+                avatarImg.style.display = 'block';
+                defaultIcon.style.display = 'none';
+            } else {
+                avatarImg.style.display = 'none';
+                defaultIcon.style.display = 'block';
+            }
+
+            document.getElementById('logout-btn').addEventListener('click', () => {
+                localStorage.removeItem('currentUser');
+                window.location.href = 'index.html';
+            });
+
+            // === Загрузка теории с аккордеоном ===
             fetch('data/theory/programming.json')
                 .then(response => response.json())
                 .then(data => {
                     const theoryList = document.getElementById('theory-list');
                     theoryList.innerHTML = data.topics.map((topic, index) => `
-                        <div class="result-card">
-                            <div style="display: flex; justify-content: space-between;">
+                        <div class="theory-item" data-index="${index}">
+                            <div class="theory-header">
                                 <h4>${topic.title}</h4>
                                 <button class="favorite-btn" data-section="programming" data-title="${topic.title}" data-content="${topic.content}" data-sectionname="Программирование">
                                     <i class="far fa-star"></i>
                                 </button>
                             </div>
-                            <p>${topic.content}</p>
+                            <div class="theory-content" style="display: none;">
+                                <p>${topic.content}</p>
+                            </div>
                         </div>
                     `).join('');
 
+                    // Обработчик клика на заголовок (раскрытие/скрытие)
+                    document.querySelectorAll('.theory-header').forEach(header => {
+                        header.addEventListener('click', function(e) {
+                            // Если клик по кнопке избранного – не раскрываем тему
+                            if (e.target.closest('.favorite-btn')) return;
+                            
+                            const theoryItem = this.closest('.theory-item');
+                            const content = theoryItem.querySelector('.theory-content');
+                            // Переключаем отображение
+                            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+                        });
+                    });
+
+                    // Обработчики для кнопок избранного
                     document.querySelectorAll('.favorite-btn').forEach(btn => {
                         btn.addEventListener('click', (e) => {
                             e.preventDefault();
+                            e.stopPropagation(); // предотвращаем всплытие к заголовку
                             const section = btn.dataset.section;
                             const title = btn.dataset.title;
                             const content = btn.dataset.content;
@@ -152,7 +176,8 @@
                             btn.innerHTML = '<i class="fas fa-star"></i>';
                         });
                     });
-                });
+                })
+                .catch(error => console.error('Ошибка загрузки теории:', error));
 
             // Задачи Python
             let tasks = [];
@@ -162,7 +187,8 @@
                 .then(data => {
                     tasks = data.tasks;
                     newTask();
-                });
+                })
+                .catch(error => console.error('Ошибка загрузки задач:', error));
 
             function newTask() {
                 if (tasks.length === 0) return;

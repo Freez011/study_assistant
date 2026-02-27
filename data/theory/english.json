@@ -6,9 +6,39 @@
       "keywords": ["present simple", "грамматика", "время"]
     },
     {
+      "title": "Present Continuous",
+      "content": "Present Continuous (настоящее длительное) описывает действие, происходящее в момент речи, или временную ситуацию. Образуется: am/is/are + V-ing. Вопрос: Am/Is/Are + подлежащее + V-ing? Отрицание: am/is/are + not + V-ing. Маркеры: now, at the moment, today, this week. Пример: I am reading now. He is studying this week. Также может выражать запланированное будущее (I am meeting friends tonight).",
+      "keywords": ["present continuous", "длительное", "now"]
+    },
+    {
+      "title": "Present Perfect",
+      "content": "Present Perfect (настоящее совершенное) связывает прошлое с настоящим. Образуется: have/has + V3 (past participle). Употребляется: для выражения опыта (I have been to London), результата (He has lost his keys), с неистекшим периодом (today, this week), с маркерами just, already, yet, ever, never, for, since. Пример: She has just left. Have you ever seen this film?",
+      "keywords": ["present perfect", "опыт", "результат", "for", "since"]
+    },
+    {
+      "title": "Present Perfect Continuous",
+      "content": "Present Perfect Continuous (настоящее совершенно-длительное) подчёркивает длительность действия, которое началось в прошлом и продолжается до сих пор или только что закончилось, с акцентом на процесс. Образуется: have/has + been + V-ing. Пример: I have been waiting for you for an hour. She is tired because she has been working all day. Часто с for, since, how long.",
+      "keywords": ["present perfect continuous", "длительность", "процесс"]
+    },
+    {
       "title": "Past Simple",
       "content": "Past Simple (прошедшее простое) выражает действие, произошедшее в прошлом. Для правильных глаголов добавляется окончание -ed, неправильные глаголы имеют вторую форму (см. таблицу неправильных глаголов). Вопросительная форма: Did + подлежащее + V1? Отрицание: did not + V1. Маркеры: yesterday, last week, ago, in 1990. Пример: I worked, I saw, Did you see? He didn't go.",
       "keywords": ["past simple", "прошедшее", "неправильные глаголы"]
+    },
+    {
+      "title": "Past Continuous",
+      "content": "Past Continuous (прошедшее длительное) обозначает действие, длившееся в определённый момент в прошлом. Образуется: was/were + V-ing. Часто используется для описания фона (I was reading when he came), двух одновременных действий (While I was cooking, she was watching TV), или прерванного действия (I was walking when it started to rain).",
+      "keywords": ["past continuous", "длительное в прошлом", "фон"]
+    },
+    {
+      "title": "Past Perfect",
+      "content": "Past Perfect (прошедшее совершенное) указывает на действие, завершившееся до другого действия в прошлом. Образуется: had + V3. Пример: When I arrived, they had already left. He had never seen such a beautiful place before. Часто в косвенной речи (He said he had done it).",
+      "keywords": ["past perfect", "предпрошедшее", "до другого действия"]
+    },
+    {
+      "title": "Past Perfect Continuous",
+      "content": "Past Perfect Continuous (прошедшее совершенно-длительное) подчёркивает длительность действия, которое происходило до другого момента в прошлом. Образуется: had been + V-ing. Пример: They had been waiting for hours before the bus arrived. She was tired because she had been working all day.",
+      "keywords": ["past perfect continuous", "длительность до прошлого"]
     },
     {
       "title": "Future Simple",
@@ -16,29 +46,139 @@
       "keywords": ["future simple", "will", "going to"]
     },
     {
-      "title": "Present Continuous",
-      "content": "Present Continuous (настоящее длительное) описывает действие, происходящее в момент речи, или временную ситуацию. Образуется: am/is/are + V-ing. Вопрос: Am/Is/Are + подлежащее + V-ing? Отрицание: am/is/are + not + V-ing. Маркеры: now, at the moment, today, this week. Пример: I am reading now. He is studying this week.",
-      "keywords": ["present continuous", "длительное"]
+      "title": "Future Continuous",
+      "content": "Future Continuous (будущее длительное) описывает действие, которое будет происходить в определённый момент в будущем. Образуется: will be + V-ing. Пример: This time tomorrow I will be flying to Paris. Will you be using the computer later?",
+      "keywords": ["future continuous", "длительное в будущем"]
     },
     {
-      "title": "Модальные глаголы",
-      "content": "Модальные глаголы (can, could, may, might, must, shall, should, will, would, ought to) выражают возможность, необходимость, разрешение, совет. Особенности: после них не используется to, они не изменяются по лицам. Примеры: I can swim. You must go. He should study. May I come in?",
-      "keywords": ["модальные", "can", "must", "should"]
+      "title": "Future Perfect",
+      "content": "Future Perfect (будущее совершенное) указывает на действие, которое завершится к определённому моменту в будущем. Образуется: will have + V3. Пример: By next week, I will have finished this project. They will have arrived by 8 pm.",
+      "keywords": ["future perfect", "завершённое к моменту"]
     },
     {
-      "title": "Условные предложения",
-      "content": "Условные предложения (if- clauses) бывают нескольких типов: 0 тип (реальные факты: If + present simple, present simple), 1 тип (реальные условия в будущем: If + present simple, will + V1), 2 тип (маловероятные или нереальные: If + past simple, would + V1), 3 тип (нереальные в прошлом: If + past perfect, would have + V3). Смешанные типы. Примеры: If you heat ice, it melts. If it rains, I'll stay home. If I had money, I'd buy a car. If I had known, I would have told you.",
-      "keywords": ["conditional", "if", "условные"]
+      "title": "Future Perfect Continuous",
+      "content": "Future Perfect Continuous (будущее совершенно-длительное) подчёркивает длительность действия, которое будет продолжаться до определённого момента в будущем. Образуется: will have been + V-ing. Пример: By December, I will have been working here for 5 years.",
+      "keywords": ["future perfect continuous", "длительность до момента в будущем"]
+    },
+    {
+      "title": "Согласование времён (Sequence of Tenses)",
+      "content": "В английском языке в придаточных предложениях (особенно дополнительных) время глагола часто согласуется с временем в главном предложении. Если главное предложение в прошедшем времени, то в придаточном происходит сдвиг: present → past, past → past perfect, future → would + V1 и т.д. Пример: He said (that) he was tired. I thought you had already left. Правила согласования обязательны в косвенной речи.",
+      "keywords": ["согласование времён", "sequence of tenses", "косвенная речь"]
+    },
+    {
+      "title": "Модальные глаголы: can, could, may, might",
+      "content": "Модальные глаголы выражают возможность, разрешение, предположение. Can – способность или возможность (I can swim), could – прошлая способность или вежливая просьба (Could you help me?), may – разрешение или возможность (May I come in? It may rain), might – меньшая степень вероятности (He might be late). Особенности: после них не ставится to, они не изменяются по лицам, вопросы и отрицания без do.",
+      "keywords": ["can", "could", "may", "might", "модальные"]
+    },
+    {
+      "title": "Модальные глаголы: must, have to, should, ought to",
+      "content": "Must выражает необходимость, обязанность (с точки зрения говорящего) – I must go. Have to – вынужденность, обусловленную обстоятельствами (I have to wear a uniform at work). Should / ought to – совет, рекомендация (You should see a doctor). Mustn't – запрет (You mustn't smoke here). Don't have to – отсутствие необходимости (You don't have to come early).",
+      "keywords": ["must", "have to", "should", "ought to", "необходимость"]
+    },
+    {
+      "title": "Модальные глаголы: will, would, shall",
+      "content": "Will – будущее время, волеизъявление (I will help). Would – вежливые просьбы (Would you mind...?), привычные действия в прошлом (When I was a child, I would visit grandma), условные предложения. Shall – в вопросах от 1-го лица для предложения (Shall we go?) и в официальном английском для долженствования.",
+      "keywords": ["will", "would", "shall", "модальные"]
+    },
+    {
+      "title": "Модальные глаголы с перфектным инфинитивом",
+      "content": "Модальные глаголы + have + V3 выражают отношение к прошлому. Could have done – мог бы сделать, но не сделал (You could have told me). May/might have done – возможно, сделал (He may have missed the train). Must have done – должно быть, сделал (She must have left). Should have done – следовало сделать (You should have called). Would have done – сделал бы (в условных предложениях).",
+      "keywords": ["модальные с перфектом", "could have", "must have", "should have"]
+    },
+    {
+      "title": "Условные предложения (Conditionals)",
+      "content": "0 тип (реальные факты): If + present simple, present simple (If you heat ice, it melts). 1 тип (реальные условия в будущем): If + present simple, will + V1 (If it rains, I'll stay home). 2 тип (маловероятные или нереальные): If + past simple, would + V1 (If I had money, I'd buy a car). 3 тип (нереальные в прошлом): If + past perfect, would have + V3 (If I had known, I would have told you). Смешанные типы: сочетание 2 и 3 типа.",
+      "keywords": ["conditional", "if", "условные", "типы"]
+    },
+    {
+      "title": "Условные предложения с unless, provided, as long as",
+      "content": "Unless = if not (Unless you hurry, you'll be late). Provided / providing that, as long as – при условии, что (You can go out provided you finish your homework). In case – на случай, если (Take an umbrella in case it rains).",
+      "keywords": ["unless", "provided", "as long as", "in case"]
+    },
+    {
+      "title": "Косвенная речь (Reported Speech)",
+      "content": "При переводе прямой речи в косвенную изменяются времена (сдвиг назад: Present Simple → Past Simple, Past Simple → Past Perfect, Future Simple → would + V1 и т.д.), местоимения и указатели времени (now → then, today → that day, tomorrow → the next day, here → there). Вопросы в косвенной речи имеют прямой порядок слов. Пример: He said, 'I am tired' → He said that he was tired. He asked, 'Do you like it?' → He asked if I liked it.",
+      "keywords": ["reported speech", "косвенная речь", "сдвиг времён"]
     },
     {
       "title": "Страдательный залог (Passive Voice)",
-      "content": "Страдательный залог используется, когда действие важнее исполнителя. Образуется: to be + past participle (V3). Время определяется по форме глагола to be. Примеры: The letter is written (Present Simple), The letter was written (Past Simple), The letter will be written (Future Simple), The letter is being written (Present Continuous).",
-      "keywords": ["passive", "страдательный залог"]
+      "content": "Страдательный залог используется, когда действие важнее исполнителя. Образуется: to be + past participle (V3). Время определяется по форме глагола to be. Примеры: The letter is written (Present Simple), The letter was written (Past Simple), The letter will be written (Future Simple), The letter is being written (Present Continuous), The letter has been written (Present Perfect). Исполнитель вводится предлогом by (The book was written by Pushkin).",
+      "keywords": ["passive", "страдательный залог", "by"]
     },
     {
-      "title": "Косвенная речь",
-      "content": "При переводе прямой речи в косвенную изменяются времена (сдвиг назад: Present Simple → Past Simple, Past Simple → Past Perfect, Future Simple → would + V1 и т.д.), местоимения и указатели времени (now → then, today → that day, tomorrow → the next day). Вопросы в косвенной речи имеют прямой порядок слов. Пример: He said, 'I am tired' → He said that he was tired.",
-      "keywords": ["reported speech", "косвенная речь"]
+      "title": "Инфинитив и герундий (Infinitive vs Gerund)",
+      "content": "После некоторых глаголов используется инфинитив с to (want, decide, hope, plan), после других – герундий (enjoy, mind, finish, suggest). Есть глаголы, после которых возможно и то, и другое, но с изменением смысла (remember, forget, stop, try, regret). Примеры: I remember locking the door (помню, что запер). I remembered to lock the door (не забыл запереть). Герундий также используется после предлогов.",
+      "keywords": ["infinitive", "gerund", "to", "-ing"]
+    },
+    {
+      "title": "Фразовые глаголы (Phrasal Verbs)",
+      "content": "Фразовые глаголы – это сочетание глагола с предлогом или наречием, меняющее значение. Примеры: give up (бросить), look after (заботиться), run into (встретить случайно), take off (взлетать, снимать). Они бывают разделяемыми и неразделяемыми. Список наиболее употребительных фразовых глаголов для уровня Intermediate.",
+      "keywords": ["phrasal verbs", "фразовые глаголы", "give up", "look after"]
+    },
+    {
+      "title": "Идиомы (Idioms)",
+      "content": "Идиомы – устойчивые выражения, смысл которых не выводится из составляющих слов. Примеры: 'break a leg' (удачи), 'hit the sack' (лечь спать), 'under the weather' (неважно себя чувствовать), 'once in a blue moon' (очень редко). Изучение идиом обогащает речь и помогает понимать носителей.",
+      "keywords": ["idioms", "идиомы", "break a leg", "under the weather"]
+    },
+    {
+      "title": "Словообразование (Word Formation)",
+      "content": "Основные способы словообразования: аффиксация (приставки и суффиксы), конверсия (переход из одной части речи в другую без изменения формы, например, to email – an email), словосложение (compound words: notebook, bedroom). Наиболее распространённые суффиксы: -er, -or (действующее лицо), -tion, -sion (существительные), -able, -ible (прилагательные), -ly (наречия). Приставки: un-, in-, im-, dis- (отрицание), re- (снова), over- (чрезмерно).",
+      "keywords": ["word formation", "словообразование", "приставки", "суффиксы"]
+    },
+    {
+      "title": "Коллокации (Collocations)",
+      "content": "Коллокации – устойчивые сочетания слов, которые часто употребляются вместе. Например: make a mistake (сделать ошибку), do homework (делать уроки), heavy rain (сильный дождь), fast food (быстрая еда). Знание коллокаций помогает звучать естественно. Списки коллокаций для различных тем.",
+      "keywords": ["collocations", "коллокации", "make", "do"]
+    },
+    {
+      "title": "Времена группы Future in the Past",
+      "content": "Будущее в прошедшем используется для выражения будущего действия с точки зрения прошлого. Образуется: would + V1, was/were going to + V1, was/were about to + V1. Пример: He said he would come. I was going to call you, but I forgot. Используется в косвенной речи и повествовании.",
+      "keywords": ["future in the past", "будущее в прошедшем", "would"]
+    },
+    {
+      "title": "Сослагательное наклонение (Subjunctive Mood)",
+      "content": "Сослагательное наклонение выражает нереальные или желательные действия. В английском встречается в форме were для всех лиц (I wish I were rich), а также в конструкциях с would rather, as if, it's time, после certain verbs (demand, suggest, insist) используется bare infinitive (I suggest that he go).",
+      "keywords": ["subjunctive", "сослагательное", "wish", "were"]
+    },
+    {
+      "title": "Инверсия (Inversion)",
+      "content": "Инверсия – изменение порядка слов (обратный порядок) для эмфазы или в определённых грамматических конструкциях. В вопросах (Do you like it?), после отрицательных наречий (Never have I seen such a thing), в условных предложениях (Had I known, I would have come), после so, such (So beautiful was the view...), в конструкциях с only (Only then did I understand).",
+      "keywords": ["inversion", "инверсия", "обратный порядок слов"]
+    },
+    {
+      "title": "Пунктуация в английском языке",
+      "content": "Основные правила пунктуации: точка (.) в конце повествовательного предложения, запятая (,) для разделения однородных членов, после вводных слов, перед союзами в сложных предложениях, в придаточных определительных (не always), точка с запятой (;) для связи независимых частей, двоеточие (:) перед пояснением или списком, вопросительный и восклицательный знаки, апостроф ('s) для притяжательного падежа и сокращений. Отличия от русской пунктуации.",
+      "keywords": ["punctuation", "пунктуация", "запятая", "апостроф"]
+    },
+    {
+      "title": "Написание эссе (Essay Writing)",
+      "content": "Структура академического эссе: введение (тезис), основная часть (аргументы с примерами), заключение (вывод). Типы эссе: opinion, for and against, cause and effect, problem-solution. Полезные фразы для связности: firstly, moreover, however, in conclusion. Требования к стилю: формальный, избегать сокращений, использовать нейтральную лексику.",
+      "keywords": ["essay", "эссе", "writing", "academic"]
+    },
+    {
+      "title": "Деловая переписка (Business Correspondence)",
+      "content": "Структура делового письма: адрес отправителя, дата, адрес получателя, обращение (Dear Mr. Smith), тема, основная часть, заключительная фраза (Yours sincerely / Yours faithfully), подпись. Полезные фразы: I am writing to inquire..., I would be grateful if..., Please find attached..., I look forward to hearing from you. Электронные письма: тема, приветствие, краткость.",
+      "keywords": ["business letter", "деловая переписка", "email"]
+    },
+    {
+      "title": "Резюме и сопроводительное письмо (CV and Cover Letter)",
+      "content": "Резюме (CV) включает: личные данные, образование, опыт работы, навыки, достижения, рекомендации. Сопроводительное письмо должно быть кратким, объяснять, почему вы подходите на позицию, и выражать заинтересованность. Примеры фраз: I am writing to apply for the position of... I have extensive experience in... I am confident that my skills match your requirements.",
+      "keywords": ["CV", "resume", "cover letter", "сопроводительное"]
+    },
+    {
+      "title": "Фонетика: звуки и транскрипция",
+      "content": "Английские гласные: долгие и краткие, дифтонги. Согласные: особенности произношения (th, r, w, ng). Транскрипция – система записи звуков с помощью символов IPA. Ударение в словах и предложениях, интонация (восходящая и нисходящая). Правила чтения букв и буквосочетаний.",
+      "keywords": ["phonetics", "фонетика", "транскрипция", "произношение"]
+    },
+    {
+      "title": "Различия британского и американского английского",
+      "content": "Различия в лексике: flat/apartment, lift/elevator, autumn/fall. Различия в грамматике: Present Perfect vs Past Simple (I've lost my keys / I lost my keys), использование have got / have. Различия в орфографии: colour/color, centre/center, travelled/traveled. Произношение: rhotic accent в американском, разные ударения.",
+      "keywords": ["british", "american", "различия", "uk", "us"]
+    },
+    {
+      "title": "Стилистика: формальный и неформальный английский",
+      "content": "Формальный стиль используется в академических работах, деловой переписке, официальных документах. Характеризуется сложными предложениями, пассивным залогом, отсутствием сокращений, точной лексикой. Неформальный стиль – в разговоре, личных письмах, социальных сетях: простые предложения, сокращения (I'm, don't), сленг, идиомы. Выбор стиля зависит от контекста и аудитории.",
+      "keywords": ["formal", "informal", "стиль", "register"]
     }
   ]
 }
