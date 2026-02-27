@@ -1566,5 +1566,5 @@ textarea.feedback-input {
     padding: 10px;
     background: var(--card-bg);
     border-radius: 8px;
-    border-left: 4px solid var(--danger);
+    border-left: 0px solid var(--danger);
 }
