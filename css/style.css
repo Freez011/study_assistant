@@ -1549,3 +1549,22 @@ textarea.feedback-input {
     margin: 0;
     line-height: 1.6;
 }
+
+/* Для ссылок в результатах Википедии */
+.result-card a {
+    text-decoration: none;
+    font-weight: 500;
+}
+.result-card a:hover {
+    text-decoration: underline;
+}
+
+/* Сообщения об ошибках */
+.error-message {
+    color: var(--danger);
+    font-weight: 500;
+    padding: 10px;
+    background: var(--card-bg);
+    border-radius: 8px;
+    border-left: 4px solid var(--danger);
+}

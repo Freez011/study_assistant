@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поиск в Википедии - Study Assistant</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard">
+        <div class="dashboard-header">
+            <a href="dashboard.html" class="back-link"><i class="fas fa-arrow-left"></i> Назад</a>
+            <h1>Поиск в Википедии</h1>
+            <div class="user-info">
+                <a href="profile.html" class="profile-link" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit;">
+                    <div style="width: 40px; height: 40px; border-radius: 50%; overflow: hidden; background: var(--primary); display: flex; align-items: center; justify-content: center;">
+                        <img id="profile-avatar" src="" alt="Avatar" style="width: 100%; height: 100%; object-fit: cover; display: none;">
+                        <i class="fas fa-user-circle" id="default-avatar" style="font-size: 40px; color: white;"></i>
+                    </div>
+                    <span id="username"></span>
+                </a>
+                <button id="logout-btn"><i class="fas fa-sign-out-alt"></i> Выйти</button>
+            </div>
+        </div>
+
+        <div class="search-container" style="max-width: 800px;">
+            <div class="search-box">
+                <input type="text" id="wiki-query" placeholder="Введите термин, например, 'Интеграл'">
+                <button id="wiki-search-btn"><i class="fas fa-search"></i> Искать в Википедии</button>
+            </div>
+            <div id="wiki-results" class="search-results">
+                <!-- Здесь будет результат -->
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <span>© 2026 Study Assistant</span>
+            <span>📞 +7 (933) 234-50-04</span>
+            <a href="https://t.me/freezqwx" target="_blank" class="telegram-link">
+                <i class="fab fa-telegram-plane"></i> @freezqwx
+            </a>
+        </div>
+    </footer>
+
+    <script src="js/apply-theme.js"></script>
+    <script src="js/auth.js"></script>
+    <script>
+        // Загрузка данных профиля в шапку (как на других страницах)
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentUser = localStorage.getItem('currentUser');
+            if (!currentUser) {
+                window.location.href = 'index.html';
+                return;
+            }
+            const profileData = JSON.parse(localStorage.getItem(`profile_${currentUser}`)) || {};
+            const usernameSpan = document.getElementById('username');
+            if (profileData.firstName || profileData.lastName) {
+                usernameSpan.textContent = `${profileData.firstName || ''} ${profileData.lastName || ''}`.trim();
+            } else {
+                usernameSpan.textContent = currentUser;
+            }
+
+            const avatarImg = document.getElementById('profile-avatar');
+            const defaultIcon = document.getElementById('default-avatar');
+            if (profileData.avatar) {
+                avatarImg.src = profileData.avatar;
+                avatarImg.style.display = 'block';
+                defaultIcon.style.display = 'none';
+            } else {
+                avatarImg.style.display = 'none';
+                defaultIcon.style.display = 'block';
+            }
+
+            document.getElementById('logout-btn').addEventListener('click', () => {
+                localStorage.removeItem('currentUser');
+                window.location.href = 'index.html';
+            });
+
+            // Функционал поиска в Википедии
+            const searchBtn = document.getElementById('wiki-search-btn');
+            const queryInput = document.getElementById('wiki-query');
+            const resultsDiv = document.getElementById('wiki-results');
+
+            searchBtn.addEventListener('click', performSearch);
+            queryInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') performSearch();
+            });
+
+            async function performSearch() {
+                const query = queryInput.value.trim();
+                if (!query) return;
+
+                resultsDiv.innerHTML = '<p>⏳ Поиск...</p>';
+
+                try {
+                    // Используем API Википедии для получения краткой информации
+                    const url = `https://ru.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(query)}`;
+                    const response = await fetch(url);
+
+                    if (!response.ok) {
+                        if (response.status === 404) {
+                            resultsDiv.innerHTML = '<p class="error-message">❌ Статья не найдена. Попробуйте изменить запрос.</p>';
+                        } else {
+                            resultsDiv.innerHTML = `<p class="error-message">❌ Ошибка при запросе: ${response.status}</p>`;
+                        }
+                        return;
+                    }
+
+                    const data = await response.json();
+
+                    // Формируем вывод
+                    let html = `
+                        <div class="result-card">
+                            <h4>${data.title || 'Без названия'}</h4>
+                            <p>${data.extract || 'Нет описания'}</p>
+                    `;
+
+                    if (data.content_urls?.desktop?.page) {
+                        html += `<p><a href="${data.content_urls.desktop.page}" target="_blank" rel="noopener noreferrer" style="color: var(--primary);">Читать полную статью на Википедии →</a></p>`;
+                    }
+
+                    html += '</div>';
+                    resultsDiv.innerHTML = html;
+
+                } catch (error) {
+                    console.error(error);
+                    resultsDiv.innerHTML = '<p class="error-message">❌ Произошла ошибка при подключении к Википедии.</p>';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
